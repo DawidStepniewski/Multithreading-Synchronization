@@ -2,6 +2,7 @@
 #include <thread>
 class IThread
 {
+public:
 	enum Status
 	{
 		STOPPED,
@@ -9,7 +10,6 @@ class IThread
 	};
 	std::thread* thr;
 	Status status;
-public:
 	IThread();
 	virtual ~IThread();
 	void Start();
@@ -17,5 +17,9 @@ public:
 	void Join();
 	bool isRunning();
 	virtual void ThreadRoutine() = 0;
+
+protected:
+	Status thrStatus;
+	std::thread* thrPointer;
 };
 

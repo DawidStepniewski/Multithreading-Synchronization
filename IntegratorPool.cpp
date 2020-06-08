@@ -1,7 +1,5 @@
 #include "IntegratorPool.h"
 #include <algorithm>
-#include "Integrator.h"
-#include <vector>
 
 
 IntegratorPool::IntegratorPool(const size_t poolSize)

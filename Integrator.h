@@ -5,16 +5,10 @@
 
 class Integrator : public IThread {
 
-	std::vector<double> data;
-	std::mutex dataMutex;
-	std::mutex statusMutex;
-	std::mutex resultMutex;
-	double step;
-	void SetStatus(Status);
-	void ThreadRoutine();
 public:
-
-	enum Status {
+	
+	enum  Status 
+	{
 		IDLE,
 		WORKING
 	};
@@ -23,4 +17,17 @@ public:
 	void Count(const std::vector<double>&, const double);
 	Status GetStatus();
 	double GetResult();
+
+private:
+
+	std::vector<double> data;
+	std::mutex dataMutex;
+	std::mutex statusMutex;
+	std::mutex resultMutex;
+	Status status;
+	double result;
+	double step;
+	void SetStatus(Status);
+	void ThreadRoutine();
 };
+

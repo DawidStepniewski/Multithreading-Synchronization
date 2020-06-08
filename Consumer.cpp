@@ -20,7 +20,7 @@ void Consumer::ThreadRoutine() {
 		avg = avg / temp.size();
 		mtx.unlock();
 	}
-	while (IThread::isRunning);
+	while (IThread::isRunning());
 }
 
 double Consumer::GetAverage()

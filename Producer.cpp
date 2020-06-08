@@ -15,11 +15,11 @@ void Producer::ThreadRoutine()
 	 do{
 		std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		double x = rand() % RAND_MAX;
-		mtx.lock;
+		mtx.lock();
 		kolekcja.push_back(x);
-		mtx.unlock;
+		mtx.unlock();
 	 }
-		while (IThread::isRunning);
+	 while (IThread::isRunning());
 
 }
 	std::list<double> Producer::GetColection()
